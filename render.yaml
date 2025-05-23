@@ -2,7 +2,9 @@ services:
   - type: web
     name: stalker-pda-bot
     env: python
-    buildCommand: pip install --no-cache-dir -r requirements.txt
+    buildCommand: |
+      rm -f poetry.lock pyproject.toml
+      pip install --no-cache-dir -r requirements.txt
     startCommand: python bot.py
     plan: free
     envVars:
