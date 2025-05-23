@@ -2,7 +2,7 @@ services:
   - type: web
     name: stalker-pda-bot
     env: python
-    buildCommand: ""
+    buildCommand: pip install -r deps.txt
     startCommand: python bot.py
     plan: free
     envVars:
